@@ -1,14 +1,10 @@
-# wrighteaglebase
+# Romeo
 
 [![Build Status](https://travis-ci.org/wrighteagle2d/wrighteaglebase.svg?branch=master)](https://travis-ci.org/wrighteagle2d/wrighteaglebase)  
 
-This is the code release of WrightEagleBASE, which serves as the basic framework of [WrightEagle](https://wrighteagle2d.github.io/).
-A video from RoboCup 2015 final -- HELIOS2015 v.s. WrightEagle2015 -- is as follows.
+This is the code release of Romeo, which is developed from WrightEagleBASE, which serves as the basic framework of [WrightEagle](https://wrighteagle2d.github.io/). Credits goes to WrightEagleBase team.
 
-[![RoboCup 2015 Final Video](data/robocup2015final.gif)](http://www.youtube.com/watch?v=Ptzv9NF9opM "RoboCup2015 Soccer Simulation 2D Final")
-
-
-# Highlights
+# Highlights of WrightEagle team
 
 - WrightEagle has won 6 **world champions** and 5 runners-up in annual RoboCup Soccer Simulation 2D competitions since 2005. Detailed historical results from 2005 to 2013 can be found as follows:
 ![data/results.png](data/results.png "Historical Results")
@@ -17,9 +13,31 @@ A video from RoboCup 2015 final -- HELIOS2015 v.s. WrightEagle2015 -- is as foll
 ![data/wrighteagle.png](data/wrighteagle.png "MAXQ Task Graph")
 
 
-# Binaries
-For latest WrightEagle binaries used in [RoboCup Soccer Simulation 2D](https://en.wikipedia.org/wiki/RoboCup_2D_Soccer_Simulation_League) competitions, please refer to: [https://wrighteagle2d.github.io/](https://wrighteagle2d.github.io/)
 
+# Install
+- ```sudo add-apt-repository ppa:gnurubuntu/rubuntu```
+- ```sudo apt update```
+- ```sudo apt install rcssserver rcssmonitor rcsslogplayer```
+- ```git clone https://github.com/wrighteagle2d/wrighteaglebase```
+
+
+# Compiling
+- ```cd romeo```
+- Run `make [debug]` for a debug version with debugging information and assertions
+- Run `make release` for a release version
+
+
+# Usages
+A [RoboCup Soccer 2D Simulator](https://sourceforge.net/projects/sserver/files/) (as well as a monitor and a logplayer) is needed to run Romeo. Please refer to (https://github.com/rcsoccersim/rcssserver) and (https://github.com/rcsoccersim/rcssmonitor) for installation instructions.  
+
+After installation,  
+
+- Run `rcssserver` to start a soccer server which simulates the game
+- Run `rcssmonitor` to start a soccer monitor which is used to display the game
+- Run `./start.sh` to start a team on the left side with default teamname *Romeo*
+- Run `./start.sh -t [TEAMNAME]` to start a team on the right side with teamname *[TEAMNAME]* (This can varies between different teams)
+
+After both teams are connected, send a `KickOff` command to the server by hitting `Ctrl+K` in the monitor to start the game!
 
 # References
 
@@ -60,65 +78,3 @@ research.
     Correlation-MDPs**, Feng Wu, and Xiaoping Chen, *Proceedings of 
     RoboCup Symposium 2007. Atlanta, America, July 2007.*
     \[[pdf](http://link.springer.com/chapter/10.1007%2F978-3-540-68847-1_18)\]
-
-
-# Videos
-- [Final of RoboCup 2015](https://www.youtube.com/watch?v=Ptzv9NF9opM) (HELIOS2015\_0-vs-WrightEagle\_3)
-- [Final of RoboCup 2014](https://www.youtube.com/watch?v=kRIygFjlD_Q) (WrightEagle\_3-vs-Gliders2014\_2)
-- [Final of RoboCup 2013](https://www.youtube.com/watch?v=BoWoIc4IrtI) (WrightEagle\_2-vs-HELIOS2013\_0)
-- [Final of RoboCup 2012](https://www.youtube.com/watch?v=cDhSjSYPvdE) (HELIOS2012\_4-vs-WrightEagle\_1)
-- [Final of RoboCup 2011](https://www.youtube.com/watch?v=leNDA5tzUfk) (WrightEagle\_3-vs-HELIOS2011\_2)
-- [Final of RoboCup 2010](https://www.youtube.com/watch?v=BVWkndHk3AE) (HELIOS2010\_2-vs-WrightEagle\_1)
-- [Final of RoboCup 2009](https://www.youtube.com/watch?v=Q18Wxs3Da-8&index=7&list=PL4BB027D8BB6A5EB3) (HELIOS2009\_1-vs-WrightEagle\_2)
-- [Final of RoboCup 2008](https://www.youtube.com/watch?v=w1c_8TWX8dY) (Brainstormers08\_0\_4-vs-WE2008\_0\_3)
-- [Final of RoboCup 2007](https://www.youtube.com/watch?v=ceDDg_l6_J0) (Brainstormers07\_3-vs-WE2007\_0)
-- [Final of RoboCup 2005](https://www.youtube.com/watch?v=FiFj0HQXaGw) (Brainstormers05\_3-vs-WE2005\_0)
-
-
-# Install
-- ```sudo add-apt-repository ppa:gnurubuntu/rubuntu```
-- ```sudo apt update```
-- ```sudo apt install rcssserver rcssmonitor rcsslogplayer```
-- ```git clone https://github.com/wrighteagle2d/wrighteaglebase```
-
-
-# Compiling
-- ```cd wrighteaglebase```
-- Run `make [debug]` for a debug version with debugging information and assertions
-- Run `make release` for a release version
-
-
-# Usages
-A [RoboCup Soccer 2D Simulator](https://sourceforge.net/projects/sserver/files/) (as well as a monitor and a logplayer) is needed to run WrightEagleBASE. Please refer to [https://wavepackage.wordpress.com/2013/06/07/how-to-install-the-robocup-soccer-server-2d/](https://wavepackage.wordpress.com/2013/06/07/how-to-install-the-robocup-soccer-server-2d/) and [https://wavepackage.wordpress.com/2015/07/22/how-to-install-robocup-2d-simulation-server-on-ubuntu-14-04/](https://wavepackage.wordpress.com/2015/07/22/how-to-install-robocup-2d-simulation-server-on-ubuntu-14-04/) for installation instructions.  
-
-After installation,  
-
-- Run `rcssserver` to start a soccer server which simulates the game
-- Run `rcssmonitor` to start a soccer monitor which is used to display the game
-- Run `./start.sh` to start a team on the left side with default teamname *WEBase*
-- Run `./start.sh -t [TEAMNAME]` to start a team on the right side with teamname *[TEAMNAME]*
-
-After both teams are connected, send a `KickOff` command to the server by hitting `Ctrl+K` in the monitor to start the game!
-
-
-# Tutorials
-- [Introduction to WrightEagleBASE 4.0](http://wrighteagle2d.github.io/materials/14/Introduction-to-WrightEagle-Base.pdf), Rongya Chen, USTC, 2014
-- [Introduction to WrightEagleBASE 3.0](http://wrighteagle2d.github.io/materials/12/Introduction-to-WrightEagle-Base.pdf), Jiang Miao, USTC, 2012
-- [Brief Introduction to WrightEagleBASE 2.0 (in Chinese)](http://wrighteagle2d.github.io/materials/11/Brief-Introduction-to-WrightEagleBASE.pdf), Aijun Bai, USTC, 2011
-- [Introduction to WrightEagleBASE 2.0 (in Chinese)](http://wrighteagle2d.github.io/materials/10/Introduction-to-WrightEagleBASE.pdf), Aijun Bai, USTC, 2010
-- [Introduction to WrightEagleBASE 1.0 (in Chinese)](http://wrighteagle2d.github.io/materials/09/WE2009_Base.ppt), Yuhang Wang, USTC, 2009
-
-
-# Hacks
-- `void Player::Run` in `src/Player.cpp` is the main loop consisting of sensing, decision-making and executing
-- `ActiveBehavior DecisionTree::Search` in `src/DecisionTree.cpp` is the main decision-making loop
-- `void Behavior*::Plan` in `src/Behavior*.cpp` implement planning part of behaviours
-- `void Behavior*::Execute` in `src/Behavior*.cpp` implement executing part of behaviours
-
-A good starting point to hack the team is digging into `void Behavior*::Plan` functions.
-
-
-# Related Project
-- MAXQ-OP on standard Taxi domain: [https://github.com/aijunbai/taxi](https://github.com/aijunbai/taxi)
-
-
